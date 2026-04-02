@@ -1,0 +1,18 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+}
+
+
+model File {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  fileName  String
+  filePath  String
+  fileSize  Int
+  fileType  String
+  createdAt DateTime @default(now())
+}
